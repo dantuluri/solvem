@@ -24,10 +24,25 @@ body {
 #header h4 {
   color: #888;
 }
-#canvas {
+#body {
   text-align: center;
   background-color: #f6f6f6;
   padding: 10vh;
+}
+#canvas {
+  margin: auto;
+  width: 800px;
+  padding: 0px;
+  text-align: right;
+}
+button {
+  background: transparent;
+  border: none;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+button:focus {
+  outline: none;
 }
 canvas {
   border-style: solid;
@@ -36,11 +51,22 @@ canvas {
   border-radius: 10px;
   background-color:#fff;
 }
-button {
+.btn-default {
   font-size: 1.75em;
   padding: 10px;
   width: 400px;
   border-radius: 10px;
   background-color: #AA3939;
   color: #fff;
+  border: none;
+  margin-bottom: 20px;
+}
+label {
+  font-weight: none;
+  font-size: 1.75em;
+}
+.form-control {
+  margin: auto;
+  width: 800px;
+  border-radius: 10px;
 }

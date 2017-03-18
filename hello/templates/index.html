@@ -24,24 +24,6 @@
       }
     });
   });
-  </script>
-</head>
-<body>
-  <div class="container-fluid jumbotron" id="header">
-    <h1>Got Math?</h1>
-    <h2>Simply draw your expression, and we'll solve it for you.</h2>
-    <a href="#canvas">
-      <i class="fa fa-arrow-circle-down"></i>
-    </a>
-    <h4>Click the arrow to begin.</h4>
-  </div>
-  <div class="container-fluid" id="canvas">
-    <h2>Draw problem here:</h2>
-    <canvas id="colors_sketch" width="800" height="300"></canvas>
-    <br>
-    <button id="saveBtn">Enter</button>
-  </div>
-  <script type="text/javascript">
   $(function() {
     $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
       $('#colors_demo .tools').append("<a href='#colors_sketch' data-color='" + this + "' style='width: 10px; background: " + this + ";'></a> ");
@@ -65,5 +47,31 @@
     });
   });
   </script>
+</head>
+<body>
+  <div class="container-fluid jumbotron" id="header">
+    <h1>Got Math?</h1>
+    <h2>Simply draw your expression, and we'll solve it for you.</h2>
+    <a href="#canvas">
+      <i class="fa fa-arrow-circle-down"></i>
+    </a>
+    <h4>Click the arrow to begin.</h4>
+  </div>
+  <div class="container-fluid" id="body">
+    <h2>Draw problem here:</h2>
+    <div id="canvas">
+      <a href="#colors_sketch" data-tool="marker"><button class="tools">Draw</button></a>
+      <a href="#colors_sketch" data-tool="eraser"><button class="tools">Clear</button></a><br>
+      <canvas id="colors_sketch" width="800" height="300"></canvas>
+    </div>
+    <button class="btn btn-default" id="saveBtn">Enter</button>
+    <form>
+    <div class="form-group">
+      <label for="eq">Equation:</label>
+      <input type="text" class="form-control" id="eq">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  </div>
 </body>
 </html>
