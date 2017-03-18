@@ -22,7 +22,7 @@ data = MNIST('./python-mnist/data/')
 #
 print('\nLoading Testing Data...')
 img_test, labels_test = data.load_testing()
-t
+
 # test_labels = np.array(labels_test)
 #
 #
