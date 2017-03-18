@@ -34,7 +34,7 @@
     $('#colors_sketch').sketch();
     $('#saveBtn').click(function () {
       console.log("clicked")
-      $.post( "https://sleepy-ravine-87315.herokuapp.com/", { data: $('#colors_sketch')[0].toDataURL() })
+      $.post( "https://sleepy-ravine-87315.herokuapp.com/media/", { data: $('#colors_sketch')[0].toDataURL() })
       .done(function() {
         alert( "success" );
       })
