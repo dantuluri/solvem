@@ -34,7 +34,7 @@
     $('#colors_sketch').sketch();
     $('#saveBtn').click(function () {
       console.log("clicked")
-      $.post( "/media/", { data: $('#colors_sketch')[0].toDataURL() })
+      $.post( "/media/", { data: $('#colors_sketch')[0].toDataURL()})
       .done(function() {
         alert( "success" );
       })
@@ -65,10 +65,10 @@
       <canvas id="colors_sketch" width="800" height="300"></canvas>
     </div>
     <button class="btn btn-default" id="saveBtn">Enter</button>
-    <form method="POST" action="/db">
+    <form method="POST" action="/wolframalpha-1.0/wolfram.py">
     <div class="form-group">
       <label for="eq">Equation:</label>
-      <input type="text" class="form-control" name='eq' id="eq">
+      <input value="{{ prob }}" type="text" class="form-control" name='eq' id="eq">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
