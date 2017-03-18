@@ -12,12 +12,13 @@
 <body>
   <div class="container-fluid">
     <h1>Hi.</h1>
-
-<button id="saveBtn">Download</
+    <div class="tools">
+      <a href="#colors_sketch" data-download="png" style="float: right; width: 100px;">Download</a>
+    </div>
+    <canvas id="colors_sketch" width="800" height="300"></canvas>
+    <button id="saveBtn">Download</button>
   </div>
-  <script><div class="tools">
-
-<script type="text/javascript">
+  <script type="text/javascript">
   $(function() {
     $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
       $('#colors_demo .tools').append("<a href='#colors_sketch' data-color='" + this + "' style='width: 10px; background: " + this + ";'></a> ");
@@ -25,11 +26,22 @@
     $.each([3, 5, 10, 15], function() {
       $('#colors_demo .tools').append("<a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a> ");
     });
-    var sketchObj = $('#colors_sketch').sketch();
-    $("#saveBtn").click(() -> {  ajax call'#colors_sketch').toDataURL(""image/#{png}"") })
-
-
+    $('#colors_sketch').sketch();
+    $('#saveBtn').click(function () {
+      console.log("clicked")
+      $.post( "http://httpbin.org/post", { data: $('#colors_sketch')[0].toDataURL() })
+      .done(function() {
+        alert( "success" );
+      })
+      .fail(function() {
+        alert( "error" );
+      })
+      .always(function() {
+        alert( "complete" );
+      });
+    });
+    //$("#saveBtn").click(() -> {  ajax call'#colors_sketch').toDataURL(""image/#{png}"") })
   });
-</script>
+  </script>
 </body>
 </html>
