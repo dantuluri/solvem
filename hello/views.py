@@ -11,10 +11,16 @@ def index(request):
 
 def db(request):
 
+    if request.method == 'POST':
+        eq = request.POST.get('eq', '')
+        print (eq)
+        # equation = Equation()
+        # equation.content = eq
+        # equation.save()
+
     greeting = Greeting()
     greeting.save()
 
     greetings = Greeting.objects.all()
 
     return render(request, 'db.html', {'greetings': greetings})
-
