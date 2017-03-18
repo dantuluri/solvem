@@ -7,10 +7,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://intridea.github.io/sketch.js/lib/sketch.js"></script>
 </head>
 <body>
   <div class="container-fluid">
     <h1>Hi.</h1>
+
+<button id="saveBtn">Download</
   </div>
+  <script><div class="tools">
+
+<script type="text/javascript">
+  $(function() {
+    $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
+      $('#colors_demo .tools').append("<a href='#colors_sketch' data-color='" + this + "' style='width: 10px; background: " + this + ";'></a> ");
+    });
+    $.each([3, 5, 10, 15], function() {
+      $('#colors_demo .tools').append("<a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a> ");
+    });
+    var sketchObj = $('#colors_sketch').sketch();
+    $("#saveBtn").click(() -> {  ajax call'#colors_sketch').toDataURL(""image/#{png}"") })
+
+
+  });
+</script>
 </body>
 </html>
