@@ -52,6 +52,7 @@ acc = clf.score(X_test,y_test)
 
 print('\nMaking Predictions on Testing Data...')
 pred = clf.predict(test_img)
+[test_image]
 
 print('\nCalculating Accuracy of Predictions...')
 accuracy = accuracy_score(test_labels, pred)
