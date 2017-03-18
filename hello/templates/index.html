@@ -34,7 +34,7 @@
     $('#colors_sketch').sketch();
     $('#saveBtn').click(function () {
       console.log("clicked")
-      $.post( "/media/", { data: $('#colors_sketch')[0].toDataURL() })
+      $.post( "/media/", { data: $('#colors_sketch')[0]})
       .done(function() {
         alert( "success" );
       })
